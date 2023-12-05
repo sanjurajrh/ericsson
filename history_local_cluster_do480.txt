@@ -1,0 +1,26 @@
+    1  ssh lab@utility
+    2  oc login -u admin -p redhat https://api.ocp4.example.com:6443 
+    3  oc whoami --show-console 
+    4  ssh lab@utility
+    5  ls -al .ssh/
+    6  ssh core@master101.ocp4.example.com -i .ssh/lab_rsa
+    7  id 
+    8  podman images
+    9  podman pull quay.io/redhattraining/versioned-hello:v1.0 
+   10  podman images quay.io/redhattraining/versioned-hello:v1.0 
+   11  podman image inspect quay.io/redhattraining/versioned-hello:v1.0 
+   12  podman image inspect quay.io/redhattraining/versioned-hello:v1.1
+   13  podman image inspect docker.io/nginx:1.20.2
+   14  ls -l .local/
+   15  sudo systemctl status crond
+   16  oc whoami -
+   17  oc whoami
+   18  oc whoami --show-server 
+   19  oc get project | grep open-cluster
+   20  oc get pods -n open-cluster-management-hub  
+   21  oc get pods -n open-cluster-management
+   22  history 
+   23  git clone https://github.com/sanjurajrh/helloworld.git
+   24  ls
+   25  ls helloworld/
+   26  history > history_local_cluster_do480.txt 
