@@ -1,0 +1,55 @@
+    1  oc get routes -n opens-cluster-management
+    2  history 
+    3  lab start multicluster-review
+    4  cd DO480/labs/
+    5  cd multicluster-review/
+    6  ls
+    7  cat operator-group.yaml 
+    8  ls -l 
+    9  oc login -u admin -p redhat https://api.ocp4.example.com:6443
+   10  oc whoami --show-console 
+   11  oc new-project open-cluster-management
+   12  ls
+   13  cat operator-group.yaml 
+   14  oc create -f operator-group.yaml 
+   15  oc create -f subscription.yaml 
+   16  oc get installplan
+   17  ls
+   18  oc patch installplan install-vh62t --type merge --patch '{"spec":{"approved":true}}'
+   19  watch oc get cvs
+   20  watch oc get csv
+   21  oc craete -f mch.yaml 
+   22  oc create -f mch.yaml 
+   23  watch oc get multeclusterhub
+   24  watch oc get multiclusterhub
+   25  oc new-project managed-cluster
+   26  oc label namespace managed-cluster cluster.open-cluster-manement.io/managedCluster=managed-cluster
+   27  cat mngcluster.yaml 
+   28  oc create -f mngcluster.yaml 
+   29  cat klusterlet.yaml 
+   30  oc create -f klusterlet.yaml 
+   31  oc get secrets managed-cluster-import -n managed-cluster -o jsonpath={.data.crds\\.yaml"} | base64 --decode > klustered-crd.yaml
+   32  oc get secrets managed-cluster-import -n managed-cluster -o jsonpath={.data.crds\\.yaml} | base64 --decode > klustered-crd.yaml
+   33  oc get secrets managed-cluster-import -n managed-cluster -o jsonpath={.data.import\\.yaml} | base64 --decode > import-crd.yaml
+   34  oc login -u admin -p redhat https://api.ocp4-mng.example.com:6443
+   35  oc create -f klustered-crd.yaml 
+   36  oc create -f import-crd.yaml 
+   37  oc get pods -n open-cluster-management-agent
+   38  oc get pods -n open-cluster-management-agent-addon 
+   39  oc get pods -n open-cluster-management-agent
+   40  oc get pods -n open-cluster-management-agent-addon 
+   41  oc whoami --show-server 
+   42  oc get pods -n open-cluster-management-agent
+   43  oc get pods -n open-cluster-management-agent-addon 
+   44  oc get pods -n open-cluster-management-agent-addon  -w
+   45  oc get pods -n open-cluster-management-agent-addon  
+   46  oc get pods -n open-cluster-management-agent-addon  -w
+   47  history 
+   48  oc login -u admin -p redhat https://api.ocp4.example.com:6443
+   49  oc get mangagedcluster
+   50  oc get managedcluster
+   51  cd /home/student/
+   52  lab grade multicluster-review 
+   53  lab finsih multicluster-review 
+   54  lab finish multicluster-review 
+   55  history > pp.txt
