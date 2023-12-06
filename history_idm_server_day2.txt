@@ -1,0 +1,16 @@
+    1  kinit admin 
+    2  klist 
+    3  ipa user-find 
+    4  kinit admin 
+    5  ipa user-find 
+    6  ipa user-add alice 
+    7  ipa user-add bob 
+    8  ipa user-add bob
+    9  ipa user-mod alice --password
+   10  ipa user-mod bob --password
+   11  kinit alice
+   12  kinit bob
+   13  kinit admin
+   14  ipa user-find
+   15  history 
+   16  history > history_idm_server_day2.txt 
